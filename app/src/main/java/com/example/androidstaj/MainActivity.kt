@@ -14,36 +14,39 @@ class MainActivity: AppCompatActivity() {
 
     val Gender = resources.getStringArray(R.array.Gender),
 
-    val spinner = findViewById <Spinner>(R.id.spinner)
+    val spinner = findViewById<Spinner>(R.id.spinner)
 
-    if (spinner != null) {
-        val adapter = ArrayAdapter(this,
-            android.R.layout.simple_spinner_item, Gender)
+    if (spinner != null)
+    {
+        val adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item, Gender
+        )
         spinner.adapter = adapter
 
         spinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>,
-                                        view: View, position: Int, id: Long) {
-                Toast.makeText(this@MainActivity,
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View, position: Int, id: Long
+            ) {
+                Toast.makeText(
+                    this@MainActivity,
                     getString(R.string.item) + " " +
-                            "" + Gender[position], Toast.LENGTH_SHORT).show()
+                            "" + Gender[position], Toast.LENGTH_SHORT
+                ).show()
             }
 
-
-
-
-
+            fun toastMessage(view: View) {
+                val messageEditText = findViewById<EditText>(R.id.messageEditText)
+                val message = messageEditText.text.toString()
+                var toast = Toast.makeText(this, message, Toast.LENGTH_LONG)
+                toast.show()
+            }
+        }
+    }
 }
 
 
-        class toast: AppCompatActivity() {
-        fun toastMessage(view: View) {
-            val messageEditText = findViewById<EditText>(R.id.messageEditText)
-            val message = messageEditText.text.toString()
-            var toast = Toast.makeText(this, message, Toast.LENGTH_LONG)
-            toast.show()
-        }
-        }
 
 
