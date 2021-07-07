@@ -5,26 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".MainActivity">
+    tools:context=".Main">
 
     <EditText
         android:id="@+id/email"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="183dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="112dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:bufferType="normal"
         android:ems="10"
+        android:imeActionLabel="E-mail"
         android:inputType="textEmailAddress"
-        android:text="E-mail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Username" />
 
     <EditText
         android:id="@+id/Password"
@@ -39,7 +42,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:password="true"
-        android:text="@android:string/untitled"
+        android:text="Password"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#2196F3"
         android:visibility="visible"
@@ -58,19 +61,21 @@
         android:layout_marginTop="284dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:contentDescription="Birth Date"
         android:ems="10"
         android:inputType="date"
-        android:text="Birth date"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="192dp"
-        android:layout_height="39dp"
+        android:layout_width="168dp"
+        android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
@@ -79,29 +84,43 @@
         android:focusable="auto"
         android:orientation="vertical"
         android:overScrollMode="ifContentScrolls"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54"
-        tools:listitem="@android:layout/activity_list_item" />
+        app:layout_constraintVertical_bias="0.441"
+        tools:listitem="@android:layout/activity_list_item"
+        tools:visibility="visible" />
 
     <Button
-        android:id="@+id/Save"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.586" />
+
+    <EditText
+        android:id="@+id/messageEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="580dp"
+        android:ems="10"
+        android:hint="Message to toast"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
